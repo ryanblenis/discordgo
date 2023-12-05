@@ -1394,18 +1394,6 @@ func (m *Member) AvatarURL(size string) string {
 
 }
 
-// DisplayName returns the member's guild nickname if they have one,
-// otherwise it returns their discord display name, otherwise, username.
-func (m *Member) DisplayName() string {
-	if m.Nick != "" {
-		return m.Nick
-	} else if m.User.GlobalName != "" {
-		return m.User.GlobalName
-	} else {
-		return m.User.Username
-	}
-}
-
 // ClientStatus stores the online, offline, idle, or dnd status of each device of a Guild member.
 type ClientStatus struct {
 	Desktop Status `json:"desktop"`
